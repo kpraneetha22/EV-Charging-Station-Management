@@ -1,3 +1,7 @@
+from database import repository
+from database.database import Database
+from database.repository import Repository
+from models import booking
 from models.vehicle import ElectricCar
 from models.customer import Customer
 from models.charger import FastCharger, StandardCharger
@@ -6,9 +10,11 @@ from models.charging_station import ChargingStation
 from services.booking_service import BookingService
 from services.charging_service import ChargingService
 
-
 def main():
 
+    database = Database()
+    database.create_tables()
+    repository = Repository()
     # -----------------------------
     # Create Customer
     # -----------------------------
@@ -18,7 +24,7 @@ def main():
         "Praneetha",
         "9876543210"
     )
-
+    repository.save_customer(customer)
 
     # -----------------------------
     # Create Vehicle
@@ -31,7 +37,7 @@ def main():
     )
 
     customer.add_vehicle(car)
-
+    repository.save_vehicle(car, customer.customer_id)
 
     # -----------------------------
     # Create Charging Station
@@ -65,6 +71,8 @@ def main():
 
     station.add_charger(charger1)
     station.add_charger(charger2)
+    repository.save_charger(charger1)
+    repository.save_charger(charger2)
 
 
     # -----------------------------
@@ -95,6 +103,7 @@ def main():
         station,
         charger1
     )
+    repository.save_booking(booking)
 
     booking.display_booking()
 
@@ -110,6 +119,7 @@ def main():
         booking
     )
 
+    repository.save_session(session)
     session.display_session()
 
 
@@ -122,6 +132,7 @@ def main():
         25
     )
 
+    repository.save_session(session)
     session.display_session()
 
 
