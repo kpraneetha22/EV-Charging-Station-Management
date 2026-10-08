@@ -1,3 +1,6 @@
+<img width="1536" height="1024" alt="ChatGPT Image Oct 8, 2026, 10_33_00 PM" src="https://github.com/user-attachments/assets/0d951351-ecac-43bd-9998-f9d309090411" />
+<img width="1536" height="1024" alt="ChatGPT Image Oct 8, 2026, 10_32_43 PM" src="https://github.com/user-attachments/assets/db022b68-9cd3-46b0-8853-24fe3de974d3" />
+
 # EV Charging Station Management System
 
 ## Overview
